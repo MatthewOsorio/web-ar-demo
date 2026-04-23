@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- A-Frame loads first - 3D rendering engine -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+    <!-- AR.js loads second - tracking library -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <!-- a-scene is the AR world - arjs tells it to use the webcam as the camera source -->
+    <a-scene embedded arjs="sourceType: webcam;" vr-mode-ui="enabled: false">
+        <!-- Defining the image target -->
+        <a-marker preset="hiro">
+            <!-- 3D model being rendered -->
+            <a-gltf-model src="./snoopy.glb" position="0 0 0" scale="0.1 0.1 0.1" rotation="0 0 0"></a-gltf-model>
+        </a-marker>
+
+        <!-- AR scene camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
